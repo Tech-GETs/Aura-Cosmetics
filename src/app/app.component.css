@@ -1,0 +1,11 @@
+/* src/app/app.component.css */
+nav {
+  background-color: #f0f4f8;
+  padding: 10px;
+}
+
+  nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+  }

@@ -1,0 +1,11 @@
+<!-- src/app/user/user.component.html -->
+<div>
+  <h1>Users</h1>
+  <div *ngFor="let user of users">
+    <div>
+      <h2>{{ user.username }}</h2>
+      <p>{{ user.email }}</p>
+      <p>{{ user.role }}</p>
+    </div>
+  </div>
+</div>

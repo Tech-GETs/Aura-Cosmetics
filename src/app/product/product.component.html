@@ -1,0 +1,69 @@
+<div>
+  <button (click)="toggleModal()">Add Product</button>
+</div>
+
+<div *ngIf="showModal">
+  <h2>{{ editingProduct ? 'Edit Product' : 'Add Product' }}</h2>
+  <form (ngSubmit)="saveProduct()">
+
+    <label>Product Name:</label>
+    <input [(ngModel)]="newProduct.productName" name="productName" required />
+
+    <label>Brand Name:</label>
+    <input [(ngModel)]="newProduct.brandName" name="brandName" required />
+
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="newProduct.price" name="price" required />
+
+    <label>Ratings:</label>
+    <input type="number" [(ngModel)]="newProduct.ratings" name="ratings" required />
+
+    <label>Description:</label>
+    <textarea [(ngModel)]="newProduct.description" name="description" required></textarea>
+
+    <label>Product Type:</label>
+    <select [(ngModel)]="newProduct.productType" name="productType" required>
+      <option *ngFor="let type of productTypes" [value]="type">{{ type }}</option>
+    </select>
+
+    <label>Product Subtype:</label>
+    <select [(ngModel)]="newProduct.productSubtype" name="productSubtype" required>
+      <option *ngFor="let subtype of productSubtypes[newProduct.productType]" [value]="subtype">{{ subtype }}</option>
+    </select>
+
+    <label>Image Path 1:</label>
+    <input type="text" [(ngModel)]="newProduct.imagePath1" name="imagePath1" required />
+
+    <label>Image Path 2:</label>
+    <input type="text" [(ngModel)]="newProduct.imagePath2" name="imagePath2" />
+
+    <label>Image Path 3:</label>
+    <input type="text" [(ngModel)]="newProduct.imagePath3" name="imagePath3" />
+
+    <label>Image Path 4:</label>
+    <input type="text" [(ngModel)]="newProduct.imagePath4" name="imagePath4" />
+
+    <button type="submit">{{ editingProduct ? 'Update' : 'Save' }}</button>
+    <button type="button" (click)="toggleModal()">Cancel</button>
+  </form>
+</div>
+
+<div *ngFor="let product of products">
+  <div class="product-card">
+    <h3>{{ product.productName }}</h3>
+    <p>{{ product.brandName }}</p>
+    <p>Price: {{ product.price }}</p>
+    <p>Ratings: {{ product.ratings }}</p>
+    <p>Description: {{ product.description }}</p>
+    <img *ngIf="product.imagePath1" [src]="product.imagePath1" alt="{{ product.productName }}" id="img1" />
+    <img *ngIf="product.imagePath2" [src]="product.imagePath2" alt="{{ product.productName }}" id="img2" />
+    <img *ngIf="product.imagePath3" [src]="product.imagePath3" alt="{{ product.productName }}" id="img3" />
+    <img *ngIf="product.imagePath4" [src]="product.imagePath4" alt="{{ product.productName }}" id="img4" />
+
+    <div style="margin-top:10px;">
+      <button (click)="editProduct(product)">Edit</button>
+      <button (click)="deleteProduct(product.id!)">Delete</button>
+    </div>
+
+  </div>
+</div>

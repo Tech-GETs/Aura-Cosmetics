@@ -1,0 +1,123 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f0f2; /* Light pastel background */
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  color: #d6a2b2; /* Soft pink */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  max-width: 800px;
+  margin: auto;
+}
+
+.add-product-button {
+  background-color: #f2b2c6; /* Light coral */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+  .add-product-button:hover {
+    background-color: #e09fba; /* Darker coral */
+    transform: scale(1.05);
+  }
+
+.card {
+  background-color: #ffffff; /* White for contrast */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+h3 {
+  margin: 0 0 10px 0;
+  color: #c86f94; /* Soft rose */
+}
+
+p {
+  margin: 5px 0;
+  color: #666; /* Darker gray for text */
+}
+
+button {
+  background-color: #9fd5d0; /* Pastel teal */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+  button:hover {
+    background-color: #88b4b0; /* Darker teal */
+  }
+
+.edit-form {
+  background-color: #ffffff; /* White for the form */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+  .edit-form h3 {
+    color: #d6a2b2; /* Soft pink */
+  }
+
+  .edit-form label {
+    display: block;
+    margin-top: 15px;
+    color: #555; /* Darker gray for labels */
+  }
+
+  .edit-form input,
+  .edit-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: border-color 0.3s;
+  }
+
+    .edit-form input:focus,
+    .edit-form textarea:focus {
+      border-color: #c86f94; /* Focused border color */
+    }
+
+  .edit-form button.save-button {
+    background-color: #f2b2c6; /* Light coral */
+    margin-top: 15px;
+  }
+
+    .edit-form button.save-button:hover {
+      background-color: #e09fba; /* Darker coral on hover */
+    }
+
+  .edit-form button.cancel-button {
+    background-color: #e74c3c; /* Red for cancel */
+  }
+
+    .edit-form button.cancel-button:hover {
+      background-color: #c0392b; /* Darker red */
+    }
